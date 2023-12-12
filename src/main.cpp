@@ -5,6 +5,8 @@
 
 #include "config.h"
 #include "screen_menu.h"
+#include "screen_game.h"
+#include "screen_gameover.h"
 
 int globalgamestate = 0;
 
