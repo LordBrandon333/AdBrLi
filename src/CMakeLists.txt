@@ -10,7 +10,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(${PROJECT_NAME} main.cpp
         screen_menu.cpp
-        scrren_game.cpp
+        screen_game.cpp
         screen_gameover.cpp
         screen_menu.h)
 
