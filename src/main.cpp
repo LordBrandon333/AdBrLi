@@ -28,7 +28,7 @@ int main() {
     // Your own initialization code here
     // ...
     // ...
-    Texture2D myTexture = LoadTexture("assets/graphics/testimage.png");
+    eichhoernchen = LoadTexture("assets/graphics/testimage.png");
 
     // Main game loop
     while (!WindowShouldClose()) // Detect window close button or ESC key
@@ -74,7 +74,7 @@ int main() {
     // De-initialization here
     // ...
     // ...
-    UnloadTexture(myTexture);
+    //UnloadTexture(myTexture);
 
     // Close window and OpenGL context
     CloseWindow();

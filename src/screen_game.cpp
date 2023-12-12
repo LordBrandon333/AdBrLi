@@ -1,5 +1,6 @@
 #include "raylib.h"
 #include "global_variable.h"
+#include "screen_game.h"
 
 int localtimeCounter = timeCounter;
 
@@ -10,3 +11,4 @@ void screen_game(){
     DrawText(TextFormat("Remaining Time: %i", localtimeCounter / 60), 10, 10, 30, LIGHTGRAY);
     localtimeCounter--;
 }
+
