@@ -1,14 +1,12 @@
 #include "raylib.h"
 #include "global_variable.h"
-#include "screen_game.h"
 
-int localtimeCounter = timeCounter;
+int timeCounter = 360;
 
 void screen_game(){
-    if (localtimeCounter == 0){
-        localtimeCounter = 360;
+    if (timeCounter == 0){
+        timeCounter = 360;
     }
-    DrawText(TextFormat("Remaining Time: %i", localtimeCounter / 60), 10, 10, 30, LIGHTGRAY);
-    localtimeCounter--;
+    DrawText(TextFormat("Remaining Time: %i", timeCounter / 60), 10, 10, 30, LIGHTGRAY);
+    timeCounter--;
 }
-

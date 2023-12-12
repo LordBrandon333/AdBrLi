@@ -1,8 +1,6 @@
 ﻿#include <cstdlib> //First Version
 #include <iostream>
-
 #include "raylib.h"
-
 #include "config.h"
 #include "global_variable.h"
 #include "screen_menu.h"
@@ -14,7 +12,7 @@ enum states {menu, game, gameover};
 enum states globalgamestate = menu;
 
 int frameCounter = 0;
-int timeCounter = 360;
+
 
 int main() {
     // Raylib initialization
@@ -56,7 +54,6 @@ int main() {
         switch (globalgamestate) {
             case menu:
                 screen_menu();
-                timeCounter = 360;
                 break;
             case game:
                 screen_game();
