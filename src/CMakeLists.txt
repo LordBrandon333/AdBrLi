@@ -12,7 +12,9 @@ add_executable(${PROJECT_NAME} main.cpp
         screen_menu.cpp
         screen_game.cpp
         screen_gameover.cpp
-        screen_menu.h)
+        screen_menu.h
+        screen_gameover.h
+        screen_game.h)
 
 # Add config.h.in file
 configure_file(config.h.in config.h)
