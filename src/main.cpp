@@ -37,6 +37,7 @@ int main() {
         }
        if (IsKeyReleased(KEY_ENTER) & globalgamestate == gameover){
            frameCounter = 0;
+           //timeCounter = 360; hinzufügen
            globalgamestate = menu;
         }
         if (IsKeyReleased(KEY_SPACE) & globalgamestate == menu){
