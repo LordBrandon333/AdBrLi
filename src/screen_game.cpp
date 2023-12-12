@@ -1,5 +1,8 @@
 #include "raylib.h"
 
+int timeCounter = 3600;
+
 void screen_game(){
-    DrawText("5^2=15", 10, 10, 30, LIGHTGRAY);
+    DrawText(TextFormat("Remaining Time: %i", timeCounter / 60), 10, 10, 30, LIGHTGRAY);
+    timeCounter--;
 }
