@@ -1,8 +1,6 @@
 ﻿#include <cstdlib> //First Version
 #include <iostream>
-
 #include "raylib.h"
-
 #include "config.h"
 #include "global_variable.h"
 #include "screen_menu.h"
