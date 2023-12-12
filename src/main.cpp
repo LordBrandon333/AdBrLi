@@ -13,6 +13,11 @@ enum states globalgamestate = menu;
 
 int frameCounter = 0;
 
+struct clickThis{
+    Vector2 Pos;
+    int speed;
+};
+
 
 int main() {
     // Raylib initialization
@@ -26,7 +31,7 @@ int main() {
     // Your own initialization code here
     // ...
     // ...
-    eichhoernchen = LoadTexture("assets/graphics/testimage.png");
+    Texture2D sprite = LoadTexture("assets/graphics/blue_creature_thing-export.png");
 
     // Main game loop
     while (!WindowShouldClose()) // Detect window close button or ESC key
@@ -58,6 +63,7 @@ int main() {
             case game:
                 screen_game();
                 frameCounter++;
+                DrawTexture(sprite, GetScreenWidth() / 2, GetScreenHeight() / 2, WHITE);
                 break;
             case gameover:
                 screen_gameover();
