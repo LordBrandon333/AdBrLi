@@ -31,7 +31,7 @@ int main() {
     // Main game loop
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
-        if (frameCounter == 3600)
+        if (frameCounter == 300)
         {
             globalgamestate = gameover;
         }
