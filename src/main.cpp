@@ -53,7 +53,7 @@ int main() {
                 screen_game();
                 break;
             case 2:
-                DrawText("Das ist der Game Over Screen State", 10, 10, 30, LIGHTGRAY);
+                screen_gameover();
                 break;
         }
 
