@@ -45,7 +45,7 @@ int main() {
             // ...
             ClearBackground(WHITE);
 
-        switch (globalgamestate == 0) {
+        switch (globalgamestate) {
             case 0:
                 screen_menu();
                 break;
