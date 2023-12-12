@@ -50,7 +50,7 @@ int main() {
                 screen_menu();
                 break;
             case 1:
-                DrawText("Das ist der Game Screen State", 10, 10, 30, LIGHTGRAY);
+                screen_game();
                 break;
             case 2:
                 DrawText("Das ist der Game Over Screen State", 10, 10, 30, LIGHTGRAY);
