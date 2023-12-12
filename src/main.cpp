@@ -8,7 +8,9 @@
 #include "screen_game.h"
 #include "screen_gameover.h"
 
-int globalgamestate = 0;
+enum states {menu, game, gameover};
+
+enum states globalgamestate = menu;
 
 int main() {
     // Raylib initialization
@@ -31,13 +33,13 @@ int main() {
         // ...
         // ...
         if (IsKeyReleased(KEY_KP_0)){
-            globalgamestate = 0;
+            globalgamestate = menu;
         }
         if (IsKeyReleased(KEY_KP_1)){
-            globalgamestate = 1;
+            globalgamestate = game;
         }
         if (IsKeyReleased(KEY_KP_2)){
-            globalgamestate = 2;
+            globalgamestate = gameover;
         }
         BeginDrawing();
             // You can draw on the screen between BeginDrawing() and EndDrawing()
@@ -46,13 +48,13 @@ int main() {
             ClearBackground(WHITE);
 
         switch (globalgamestate) {
-            case 0:
+            case menu:
                 screen_menu();
                 break;
-            case 1:
+            case game:
                 screen_game();
                 break;
-            case 2:
+            case gameover:
                 screen_gameover();
                 break;
         }
