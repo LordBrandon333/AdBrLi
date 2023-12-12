@@ -12,6 +12,8 @@ enum states {menu, game, gameover};
 
 enum states globalgamestate = menu;
 
+int frameCounter = 0;
+
 int main() {
     // Raylib initialization
     // Project name, screen size, fullscreen mode etc. can be specified in the config.h.in file
@@ -29,18 +31,20 @@ int main() {
     // Main game loop
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
-        // Updates that are made by frame are coded here
-        // ...
-        // ...
-        if (IsKeyReleased(KEY_KP_0)){
-            globalgamestate = menu;
-        }
-        if (IsKeyReleased(KEY_KP_1)){
-            globalgamestate = game;
-        }
-        if (IsKeyReleased(KEY_KP_2)){
+        if (frameCounter == 300)
+        {
             globalgamestate = gameover;
         }
+       if (IsKeyReleased(KEY_ENTER) & globalgamestate == gameover){
+           frameCounter = 0;
+           globalgamestate = menu;
+        }
+        if (IsKeyReleased(KEY_SPACE) & globalgamestate == menu){
+            globalgamestate = game;
+        }
+       /* if (IsKeyReleased(KEY_SPACE)){
+            globalgamestate = gameover;
+        } */
         BeginDrawing();
             // You can draw on the screen between BeginDrawing() and EndDrawing()
             // ...
@@ -53,6 +57,7 @@ int main() {
                 break;
             case game:
                 screen_game();
+                frameCounter++;
                 break;
             case gameover:
                 screen_gameover();
