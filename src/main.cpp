@@ -15,6 +15,42 @@ enum states globalgamestate = menu;
 int frameCounter = 0;
 
 int main() {
+
+    /*Vector2 v1 = {0.0, 0.0};
+    Vector2 v2 = {0.0, 0.0};
+    Vector2 v3 = {0.0, 0.0};
+    Vector2 v4 = {0.0, 0.0};
+
+    v1.x = 3.2;
+    v1.y = 10.5; */
+
+    //Code für z.B. init-Funtkion state_game_init()
+
+    Vector2 enemies[50];
+    Texture2D texture;
+
+    texture = LoadTexture("assets/enemy.png");
+
+    for (int i = 0; i < 50; i++)
+    {
+        enemies[i].x = (float) GetRandomValue(0, GetScreenWidth());
+        enemies[i].y = (float) GetRandomValue(0, GetScreenHeight());
+    }
+
+    //In die Draw Methode state_game_draw()
+
+    for(int i = 0; i < 50; i++)
+    {
+        DrawTexture(texture, (int) enemies[i].x, (int) enemies[i].y, WHITE);
+    }
+
+
+
+
+
+
+
+
     // Raylib initialization
     // Project name, screen size, fullscreen mode etc. can be specified in the config.h.in file
     InitWindow(Game::ScreenWidth, Game::ScreenHeight, Game::PROJECT_NAME);
