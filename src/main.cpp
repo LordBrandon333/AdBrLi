@@ -1,9 +1,8 @@
 ﻿#include <cstdlib> //First Version
 #include <iostream>
-
 #include "raylib.h"
-
 #include "config.h"
+#include "global_variable.h"
 #include "screen_menu.h"
 #include "screen_game.h"
 #include "screen_gameover.h"
@@ -13,6 +12,7 @@ enum states {menu, game, gameover};
 enum states globalgamestate = menu;
 
 int frameCounter = 0;
+
 
 int main() {
 
@@ -67,7 +67,7 @@ int main() {
     // Main game loop
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
-        if (frameCounter == 300)
+        if (frameCounter == 360)
         {
             globalgamestate = gameover;
         }
