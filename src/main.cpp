@@ -16,6 +16,7 @@ int frameCounter = 0;
 struct clickThis{
     Vector2 Pos;
     int speed;
+    int raduis;
 };
 
 
@@ -31,6 +32,14 @@ int main() {
     // Your own initialization code here
     // ...
     // ...
+    clickThis fallingThingies[6]{};
+    for (int i = 0; i < 6; i++){
+        fallingThingies[i].Pos.x = GetRandomValue(0, 600);
+        fallingThingies[i].Pos.y = 10;
+        fallingThingies[i].speed = 5;
+        fallingThingies[i].raduis = 10;
+    }
+
     Texture2D sprite = LoadTexture("assets/graphics/blue_creature_thing-export.png");
 
     // Main game loop
@@ -50,6 +59,13 @@ int main() {
        /* if (IsKeyReleased(KEY_SPACE)){
             globalgamestate = gameover;
         } */
+
+       // falling Thingies falling down
+        for (int i = 0; i < 6; ++i) {
+            fallingThingies[i].Pos.y += fallingThingies[i].speed;
+        }
+
+
         BeginDrawing();
             // You can draw on the screen between BeginDrawing() and EndDrawing()
             // ...
@@ -64,6 +80,9 @@ int main() {
                 screen_game();
                 frameCounter++;
                 DrawTexture(sprite, GetScreenWidth() / 2, GetScreenHeight() / 2, WHITE);
+                for (int i = 0; i < 6; ++i) {
+                    DrawCircle(fallingThingies[i].Pos.x,fallingThingies[i].Pos.y,fallingThingies[i].raduis,RED);
+                }
                 break;
             case gameover:
                 screen_gameover();
