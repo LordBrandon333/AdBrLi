@@ -13,11 +13,11 @@ enum states globalgamestate = menu;
 
 int frameCounter = 0;
 
-struct clickThis{
+/*struct clickThis{
     Vector2 Pos;
     int speed;
     int raduis;
-};
+};*/
 
 
 int main() {
@@ -32,15 +32,15 @@ int main() {
     // Your own initialization code here
     // ...
     // ...
-    clickThis fallingThingies[6]{};
+    /*clickThis fallingThingies[6]{};
     for (int i = 0; i < 6; i++){
         fallingThingies[i].Pos.x = GetRandomValue(0, 600);
         fallingThingies[i].Pos.y = 10;
         fallingThingies[i].speed = 5;
         fallingThingies[i].raduis = 10;
-    }
+    }*/
 
-    Texture2D sprite = LoadTexture("assets/graphics/blue_creature_thing-export.png");
+    //Texture2D sprite = LoadTexture("assets/graphics/blue_creature_thing-export.png");
 
     // Main game loop
     while (!WindowShouldClose()) // Detect window close button or ESC key
@@ -61,9 +61,9 @@ int main() {
         } */
 
        // falling Thingies falling down
-        for (int i = 0; i < 6; ++i) {
+        /*for (int i = 0; i < 6; ++i) {
             fallingThingies[i].Pos.y += fallingThingies[i].speed;
-        }
+        }*/
 
 
         BeginDrawing();
@@ -79,10 +79,10 @@ int main() {
             case game:
                 screen_game();
                 frameCounter++;
-                DrawTexture(sprite, GetScreenWidth() / 2, GetScreenHeight() / 2, WHITE);
+                /*DrawTexture(sprite, GetScreenWidth() / 2, GetScreenHeight() / 2, WHITE);
                 for (int i = 0; i < 6; ++i) {
                     DrawCircle(fallingThingies[i].Pos.x,fallingThingies[i].Pos.y,fallingThingies[i].raduis,RED);
-                }
+                }*/
                 break;
             case gameover:
                 screen_gameover();
